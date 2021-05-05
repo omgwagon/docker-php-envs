@@ -7,7 +7,7 @@ RUN apt-get -y update && \
         libmcrypt-dev \
         libcurl4-openssl-dev \
         unzip \
-    && docker-php-ext-install -j"$(nproc)" mcrypt soap zip intl \
+    && docker-php-ext-install -j"$(nproc)" soap zip intl \
     && pecl install xdebug-2.9.8 \
     && docker-php-ext-enable xdebug \
     && apt-get -y clean
