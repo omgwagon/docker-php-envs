@@ -1,4 +1,4 @@
-FROM php:7.2-buster
+FROM php:8.0-buster
 
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \
@@ -6,9 +6,10 @@ RUN apt-get -y update && \
         libxml2-dev \
         libmcrypt-dev \
         libcurl4-openssl-dev \
+        libzip-dev \
         unzip \
     && docker-php-ext-install -j"$(nproc)" soap zip intl \
-    && pecl install xdebug-2.9.8 \
+    && pecl install xdebug-3.0.4 \
     && docker-php-ext-enable xdebug \
     && apt-get -y clean
 
