@@ -13,7 +13,7 @@ RUN apt-get -y update && \
     && docker-php-ext-enable xdebug \
     && apt-get -y clean
 
-ENV XDEBUG_MODE=coverage
+ENV XDEBUG_MODE=develop,coverage,debug
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
