@@ -1,4 +1,4 @@
-FROM php:7.3-buster
+FROM php:7.4-buster
 
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \
